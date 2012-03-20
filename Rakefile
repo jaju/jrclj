@@ -1,7 +1,7 @@
 require 'rubygems'
-require 'rake'
-require 'rubygems/package_task'
+require 'bundler/setup'
 require 'rspec/core/rake_task'
+require 'rubygems/package_task'
 begin
   load 'jrclj.gemspec'
 rescue

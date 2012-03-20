@@ -16,9 +16,8 @@ describe JRClj do
   end
 
   it "should support calling weirdly named symbols via aliasing" do
-    clj_xpath = JRClj.new 'com.github.kyleburton.clj-xpath'
-    clj_xpath._alias "x_txt", "$x:text"
-    clj_xpath._invoke("$x:text", "//foo", "<foo>bar</foo>").should == "bar"
-    clj_xpath.x_txt("//foo", "<foo>bar</foo>").should == "bar"
+    ccore = JRClj.new 'clojure.core'
+    ccore._alias "list_star", "list*"
+    ccore._invoke("list*", "a", "b", "'(2 3)").should == ccore.list_star("a", "b", "'(2 3)")
   end
 end

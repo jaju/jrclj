@@ -1,5 +1,7 @@
 require 'java'
 
+#Dir["#{File.dirname(__FILE__)}/*.jar"].each { |jar| puts "requiring: #{jar}"; require jar }
+require 'mvn:org.clojure:clojure'
 java_import "clojure.lang.RT"
 
 class JRClj

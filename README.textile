@@ -68,6 +68,7 @@ h3. Dealing with Strangely Named Clojure Functions
 
 As the str-utils example above showed, the library makes an attempt at mapping clojure symbol names to ruby symbol names.  The str-utils example shows that it 'folds' hyphens to underscores, since hyphens are not legal in ruby variable or function names.  There is no default translation for other characters that clojure supports in symbol names though.  <code>JRClj</code> supports an aliasing feature to allow you to deal with these situations.
 
+Example:
 The "clj-xpath":http://github.com/kyleburton/clj-xpath library contains symbols with names that are illegal as ruby methods, eg: <code>$x:text</code>.  Using the <code>_alias</code> method on <code>JRClj</code> you can expose these methods, or using <code>_invoke</code> you can call them by their name (as a string):
 
 <pre class="code">
